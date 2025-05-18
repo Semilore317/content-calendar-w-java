@@ -4,6 +4,7 @@ import dev.abrahambankole.content_calendar.model.Content;
 import dev.abrahambankole.content_calendar.repository.ContentCollectionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -25,4 +26,6 @@ public class ContentController {
     }
 
     // Create Read Update Delete - filter | paging | sorting
+    @GetMapping("/{id}")
+    public Optional<Content> findById(@PathVariable Long id) {}
 }
